@@ -1,5 +1,5 @@
 <template>
-  <div  class="flex justify-center text-black items-center">
+  <div  class="f-cc text-black">
     <div class="w-10 h-10">{{ x }} {{ y }}</div>
     <el-input class="w-20 h-20"></el-input>
     <el-button type="primary" class="w-10 h-10">sadfasdf</el-button>

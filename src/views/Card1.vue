@@ -1,12 +1,12 @@
 <template>
-  <div class="flex justify-center items-center">{{ count }}</div>
+  <div class="f-cc">{{ count }}</div>
 </template>
 <script setup lang="ts">
 import { useStore } from '@/store'
 import { storeToRefs } from 'pinia';
 import { watch } from 'vue'
 const store = useStore()
-let { count } =storeToRefs(store) 
+let { count } = storeToRefs(store) 
 watch(count, () => {
 })
 </script>
