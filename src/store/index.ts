@@ -14,5 +14,6 @@ export const useStore = defineStore('main', {
     increment(count) {
       this.count = count
     }
-  }
+  },
+  persist: true
 })

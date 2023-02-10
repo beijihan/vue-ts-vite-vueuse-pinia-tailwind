@@ -5,11 +5,9 @@
 import { useStore } from '@/store'
 import { storeToRefs } from 'pinia';
 import { watch } from 'vue'
-const store=useStore()
+const store = useStore()
 let { count } =storeToRefs(store) 
-// console.log('[  ] >', count)
 watch(count, () => {
-  console.log('[ count ] >', count.value)
 })
 </script>
 
