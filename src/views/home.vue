@@ -1,6 +1,6 @@
 <template>
   <div class="text-black">
-    <div class="w-10 h-10">{{ x }} {{ y }}</div>
+    <div class="w-10 h-10 f-cc">{{ x }} {{ y }}</div>
     <el-input class="w-[200px] h-20"></el-input>
     <el-button @click="isActive = !isActive" type="primary" class="w-20 h-10 text-[#fff]">变化长短</el-button>
     <br />

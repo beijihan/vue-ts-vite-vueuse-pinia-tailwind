@@ -4,24 +4,22 @@
 
 .f-cc {
   @include f;
-  align-items: center;
-  justify-content: center;
+  @apply justify-center items-center;
 }
 
 .f-b {
   @include f;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .f-ac {
   @include f;
-  align-items: center;
+  @apply items-center;
 }
 
 .f-jc {
   @include f;
-  align-items: center;
-  justify-content: center;
+  @apply justify-center;
 }
 
 .f-dc {
