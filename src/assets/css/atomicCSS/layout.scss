@@ -1,25 +1,25 @@
-.f {
+@mixin f {
   display: flex;
 }
 
 .f-cc {
-  .f;
+  @include f;
   align-items: center;
   justify-content: center;
 }
 
 .f-b {
-  .f;
+  @include f;
   justify-content: space-around;
 }
 
 .f-ac {
-  .f;
+  @include f;
   align-items: center;
 }
 
 .f-jc {
-  .f;
+  @include f;
   align-items: center;
   justify-content: center;
 }

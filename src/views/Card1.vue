@@ -1,5 +1,5 @@
 <template>
-  <div class="f-cc">{{ count }}</div>
+  <div class="f-c">{{ count }}</div>
 </template>
 <script setup lang="ts">
 import { useStore } from '@/store'

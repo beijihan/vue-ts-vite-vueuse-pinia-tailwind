@@ -1,14 +1,15 @@
 <template>
-  <div  class="f-cc text-black">
+  <div class="f-cc text-black">
     <div class="w-10 h-10">{{ x }} {{ y }}</div>
-    <el-input class="w-20 h-20"></el-input>
-    <el-button type="primary" class="w-10 h-10">sadfasdf</el-button>
+    <el-input class="w-[200px] h-20"></el-input>
+    <el-button @click="isActive = !isActive" type="primary" class="w-10 h-10">sadfasdf</el-button>
     <div>{{ count }}</div>
+    <el-button :class="[isActive ? 'w-[200px]' : 'w-[300px]']" :type="isActive ? 'primary' : 'warning'">长短</el-button>
     <Card></Card>
   </div>
 </template>
 <script setup lang="ts">
-import { watch } from 'vue'
+import { watch, ref } from 'vue'
 import { useMouse } from '@vueuse/core'
 import { useStore } from '@/store'
 import Card from './Card1.vue'
@@ -24,6 +25,8 @@ watch(x, () => {
   store.increment(x.value)
   count = x.value
 })
+let isActive = ref(false)
+
 </script>
 
 <style scoped>
