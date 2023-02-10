@@ -1,8 +1,9 @@
 <template>
-  <div class="f-cc text-black">
+  <div class="text-black">
     <div class="w-10 h-10">{{ x }} {{ y }}</div>
     <el-input class="w-[200px] h-20"></el-input>
-    <el-button @click="isActive = !isActive" type="primary" class="w-10 h-10">sadfasdf</el-button>
+    <el-button @click="isActive = !isActive" type="primary" class="w-20 h-10 text-[#fff]">变化长短</el-button>
+    <br />
     <div>{{ count }}</div>
     <el-button :class="[isActive ? 'w-[200px]' : 'w-[300px]']" :type="isActive ? 'primary' : 'warning'">长短</el-button>
     <Card></Card>
