@@ -29,6 +29,3 @@ watch(x, () => {
 let isActive = ref(false)
 
 </script>
-
-<style scoped>
-</style>
