@@ -22,12 +22,13 @@ let { count, isDark } = store
 //   count = x.value
 // }, 1000);
 // const { count, inc, dec } = useCounter()
+// 响应式测试相关代码
 watch(x, () => {
   // store.$patch({ count: x.value })
   store.increment(x.value)
   count = x.value
 })
-// const dark = ref(false)
+// 主题相关代码
 function initTheme(isDark) {
   changeTheme(isDark)
 }
@@ -39,7 +40,6 @@ function toogleDark() {
 }
 function changeTheme(isDark) {
   if (isDark) {
-    console.log('[ isDark ] >', isDark)
     document.body.classList.add('dark')
   } else {
     document.body.classList.remove('dark')
