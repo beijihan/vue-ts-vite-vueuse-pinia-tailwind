@@ -1,12 +1,13 @@
 <template>
-  <div class="text-black">
-    <div class="w-10 h-10 f-cc">{{ x }} {{ y }}</div>
+  <div class="text-black bg-white dark:text-white dark:bg-gray-800">
+    <div class="w-10 h-10 f-cc dark:bg-gray-800">{{ x }} {{ y }}</div>
     <el-input class="w-[200px] h-20"></el-input>
-    <el-button @click="isActive = !isActive" type="primary" class="w-20 h-10 text-[#fff]">变化长短</el-button>
+    <el-button @click="isActive = !isActive" type="primary" class="w-20 h-10 text-[#fff] dark:bg-gray-800">变化长短</el-button>
     <br />
     <div>{{ count }}</div>
     <el-button :class="[isActive ? 'w-[200px]' : 'w-[300px]']" :type="isActive ? 'primary' : 'warning'">长短</el-button>
     <Card></Card>
+    <el-button @click="toogleDark">切换主题</el-button>
   </div>
 </template>
 <script setup lang="ts">
@@ -26,6 +27,19 @@ watch(x, () => {
   store.increment(x.value)
   count = x.value
 })
+const dark = ref(false)
+function toogleDark() {
+  dark.value = !dark.value
+  if (dark.value) {
+    console.log('[ dark.value ] >', dark.value)
+    document.body.classList.add('dark-mode')
+    document.body.classList.add('dark')
+  } else {
+    document.body.classList.remove('dark-mode')
+    document.body.classList.remove('dark')
+  }
+
+}
 let isActive = ref(false)
 
 </script>

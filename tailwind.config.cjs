@@ -1,10 +1,12 @@
 const colors = require('tailwindcss/colors')
+
+// const selectorParser = require('postcss-selector-parser')
 module.exports = {
   // purge: [],
-  important: '#app',
+  important: 'html',
   purge: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
-   darkMode: 'media', // or 'media' or 'class'
-   theme: {
+  darkMode: 'class', // or 'media' or 'class'
+  theme: {
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
@@ -15,7 +17,14 @@ module.exports = {
       red: colors.rose,
       yellow: colors.amber,
     }
-   },
-   variants: {},
-   plugins: [],
- }
+  },
+  variants: {
+    extend: {
+      textOpacity: ['dark'],
+      backgroundColor: ['dark'],
+    }
+  },
+  plugins: [
+    // require('tailwindcss-dark-mode')()
+  ],
+}

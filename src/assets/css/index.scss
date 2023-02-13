@@ -3,5 +3,6 @@
 @tailwind utilities;
 
 @layer base {
+  @import "./common.scss";
   @import "./myTainwindClass.scss";
 }
