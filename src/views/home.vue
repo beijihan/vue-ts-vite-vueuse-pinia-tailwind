@@ -17,7 +17,7 @@ import { useStore } from '@/store'
 import Card from './Card1.vue'
 const { x, y } = useMouse()
 let store = useStore()
-let { count } = store
+let { count, isDark } = store
 // setTimeout(() => {
 //   count = x.value
 // }, 1000);
@@ -27,18 +27,23 @@ watch(x, () => {
   store.increment(x.value)
   count = x.value
 })
-const dark = ref(false)
+// const dark = ref(false)
+function initTheme(isDark) {
+  changeTheme(isDark)
+}
+initTheme(isDark)
 function toogleDark() {
-  dark.value = !dark.value
-  if (dark.value) {
-    console.log('[ dark.value ] >', dark.value)
-    document.body.classList.add('dark-mode')
+  isDark = !isDark
+  changeTheme(isDark)
+  store.changeDark(isDark)
+}
+function changeTheme(isDark) {
+  if (isDark) {
+    console.log('[ isDark ] >', isDark)
     document.body.classList.add('dark')
   } else {
-    document.body.classList.remove('dark-mode')
     document.body.classList.remove('dark')
   }
-
 }
 let isActive = ref(false)
 

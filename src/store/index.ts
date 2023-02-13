@@ -4,7 +4,8 @@ export const useStore = defineStore('main', {
   // 其他配置...
   state: () => {
     return {
-      count: 0
+      count: 0,
+      isDark: false
     }
   },
   getters: {
@@ -13,6 +14,9 @@ export const useStore = defineStore('main', {
   actions: {
     increment(count) {
       this.count = count
+    },
+    changeDark(isDark) {
+      this.isDark = isDark
     }
   },
   persist: true
